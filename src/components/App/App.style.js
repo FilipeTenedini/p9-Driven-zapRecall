@@ -1,1 +1,1 @@
-import styled from "styled-components";
+import styled, { GlobalStyle }from "styled-components";

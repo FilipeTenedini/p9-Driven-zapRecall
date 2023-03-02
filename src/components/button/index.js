@@ -1,4 +1,4 @@
-export const Button = () => {
+export const Button = ({setCorrects, setDoubts, setErrors}) => {
     return (
       <div>
         Button
@@ -6,3 +6,8 @@ export const Button = () => {
     );
   }
   
+CardsArea.propTypes = {
+  setCorrects: PropTypes.func.isRequired,
+  setDoubts: PropTypes.func.isRequired,
+  setErrors: PropTypes.func.isRequired,
+}

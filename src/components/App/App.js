@@ -1,9 +1,17 @@
+import { useState } from "react";
+import { StartRecall } from '../startRecall';
+import { TestArea } from '../testArea'
 function App() {
+  const [recalling, setRecalling] = useState(false);
+
   return (
-    <div>
-      App
-    </div>
+    <>
+    {recalling
+      ? <TestArea /> 
+      : <StartRecall /> 
+    }
+    </>
   );
 }
 
-export default App;
+export default App; 
