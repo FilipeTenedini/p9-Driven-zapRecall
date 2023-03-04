@@ -1,10 +1,11 @@
 import PropTypes from 'prop-types';
+import { ResultArea } from './style';
 
 export const Footer = ({corrects, doubts, errors}) => {
     return (
-      <div>
-        Footer
-      </div>
+      <ResultArea>
+        
+      </ResultArea>
     );
   }
   

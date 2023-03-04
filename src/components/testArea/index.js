@@ -1,16 +1,22 @@
 import { useState } from "react";
-import { Header } from '../header';
-import { CardsArea } from '../cardsArea'
+import logo from '../../assets/logo.png';
+import { Header, Container } from './style';
+import { CardsArea } from '../cardsArea';
 import { Footer } from '../footer';
 
 export const TestArea = () => {
-  const [corrects, setCorrects] = useState(0)
-  const [doubts, setDoubts] = useState(0)
-  const [errors, setErrors] = useState(0)
+  const [corrects, setCorrects] = useState([])
+  const [doubts, setDoubts] = useState([])
+  const [errors, setErrors] = useState([])
   
+  
+
   return (
-      <>
-        <Header />
+      <Container>
+        <Header>
+          <img src={logo} alt="zap recall logo" /> 
+          <h1> ZapRecall</h1>
+        </Header>
         <CardsArea 
           setCorrects={setCorrects}
           setDoubts={setDoubts}
@@ -20,7 +26,7 @@ export const TestArea = () => {
           doubts={doubts}
           errors={errors}
         />
-      </>
+      </Container>
     );
   }
   
