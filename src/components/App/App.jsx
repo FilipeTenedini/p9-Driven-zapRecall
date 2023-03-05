@@ -4,13 +4,15 @@ import { StartRecall } from '../startRecall';
 import { TestArea } from '../testArea'
 
 function App() {
-  const [recalling, setRecalling] = useState(true);
+  const [recalling, setRecalling] = useState(false);
 
   return (
     <Container>
       {recalling
         ? <TestArea /> 
-        : <StartRecall /> 
+        : <StartRecall 
+          setRecalling={setRecalling}
+        /> 
       }
     </Container>
   );

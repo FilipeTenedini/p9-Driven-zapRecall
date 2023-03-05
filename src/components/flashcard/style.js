@@ -46,6 +46,17 @@ export const FrontFace = styled.div`
     justify-content: space-between;
     align-items: center;
     backface-visibility: hidden;
+
+    button{
+        background-color: transparent;
+        border: none;
+        outline: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 15px;
+        cursor: pointer;
+    }
 `
 export const QuestionNumber = styled.div`
     margin-left: 15px;

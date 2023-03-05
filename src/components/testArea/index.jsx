@@ -23,11 +23,14 @@ export const TestArea = () => {
           setDoubts={setDoubts}
           errors={errors}
           setErrors={setErrors}
+          completeds={completeds}
+          setCompleteds={setCompleteds}
         />
         <Footer 
           correctsQt={corrects.length}
           doubtsQt={doubts.length}
           errorsQt={errors.length}
+          completeds={completeds}
         />
       </Container>
     );

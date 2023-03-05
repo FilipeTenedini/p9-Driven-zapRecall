@@ -7,18 +7,18 @@ import { cards } from '../../data/mock';
 import { FlashCard } from '../flashcard'
 import { rootColors } from '../../constants/colors';
 
-export const CardsArea = ({corrects, setCorrects, doubts, setDoubts, errors, setErrors}) => {
+export const CardsArea = ({corrects, setCorrects, doubts, setDoubts, errors, setErrors, completeds, setCompleteds}) => {
 
     function addTolist(listType, item){
       if (listType === 'correct'){
-        console.log(listType, item)
         setCorrects([...corrects, item])
+        setCompleteds([...completeds, correctIcon])
       } else if (listType === 'doubt'){
         setDoubts([...doubts, item])
-        console.log(listType, item)
+        setCompleteds([...completeds, doubtIcon])
       } else {
         setErrors([...errors, item])
-        console.log(listType, item)
+        setCompleteds([...completeds, errorICon])
       }
     }
 
@@ -32,6 +32,8 @@ export const CardsArea = ({corrects, setCorrects, doubts, setDoubts, errors, set
             color={corrects.includes(item.id) ? rootColors.correctColor : doubts.includes(item.id) ? rootColors.doubtColor : errors.includes(item.id) ? rootColors.errorColor : rootColors.lightBlack }
             icon={corrects.includes(item.id) ? correctIcon : doubts.includes(item.id) ? doubtIcon : errors.includes(item.id) ? errorICon : null }
             setItem={(listType, item) => addTolist(listType, item)}
+            disabled={(corrects.includes(item.id) || doubts.includes(item.id) || errors.includes(item.id)) ? true : false}
+            dataTest={corrects.includes(item.id) ? "zap-icon" : doubts.includes(item.id) ? "partial-icon" : errors.includes(item.id) ? "no-icon" : "play-btn"}
           />
         ))
         }
