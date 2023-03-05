@@ -8,23 +8,26 @@ export const TestArea = () => {
   const [corrects, setCorrects] = useState([])
   const [doubts, setDoubts] = useState([])
   const [errors, setErrors] = useState([])
-  
-  
+  const [completeds, setCompleteds] = useState([])
 
   return (
       <Container>
         <Header>
           <img src={logo} alt="zap recall logo" /> 
-          <h1> ZapRecall</h1>
+          <h1>ZapRecall</h1>
         </Header>
         <CardsArea 
-          setCorrects={setCorrects}
-          setDoubts={setDoubts}
-          setErrors={setErrors}/>
-        <Footer 
           corrects={corrects}
+          setCorrects={setCorrects}
           doubts={doubts}
+          setDoubts={setDoubts}
           errors={errors}
+          setErrors={setErrors}
+        />
+        <Footer 
+          correctsQt={corrects.length}
+          doubtsQt={doubts.length}
+          errorsQt={errors.length}
         />
       </Container>
     );

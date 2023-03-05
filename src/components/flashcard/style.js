@@ -16,7 +16,6 @@ export const scaleDownCenter = keyframes`
   }
 `
 
-
 export const Card = styled.div`
     width: 100%;
     display: flex;
@@ -50,7 +49,9 @@ export const FrontFace = styled.div`
 `
 export const QuestionNumber = styled.div`
     margin-left: 15px;
-
+    color: ${({color}) => color};
+    font-weight: 700;
+    text-decoration: ${({mode}) => mode === 0 && 'line-through'};
 `
 export const QuestionIcon = styled.img`
     width: ${({type}) => type === 'play' ? "20px" : "30px" };
@@ -60,22 +61,20 @@ export const QuestionIcon = styled.img`
 `
 
 export const BackFace = styled.div`
+    background-color: ${rootColors.yellow};
+    border-radius: 5px;
     position: absolute;
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     backface-visibility: hidden;
     transform: rotateY(180deg);
 
 `
-export const BackFaceContent = styled.div`
-    background-color: ${rootColors.yellow};
-    border-radius: 5px;
-    width: 100%;
-    height: 100%;
-`
+
 
 export const UpSide = styled.div`
     width: 100%;
